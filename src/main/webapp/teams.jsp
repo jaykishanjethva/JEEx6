@@ -16,6 +16,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>Dev Teams</title>
 <%@include file="WEB-INF/jspf/header.jspf"%>
+
 <style>
 .container {
 	padding: 20px;
@@ -40,9 +41,11 @@
         int student2 = 0;
         Student stu1 = null;
         Student stu2 = null;
-        errors = new ArrayList<String>();
+        // errors = new ArrayList<String>();
+        errors = new Vector<String>();
         boolean submitted = false;
-        List<Student> team = new ArrayList<Student>();
+        // List<Student> team = new ArrayList<Student>();
+        Vector<Student> team = new Vector<Student>();
         if (request.getParameter("btnSubmit") != null) {
         		student1 = Integer.parseInt(request.getParameter("dd1"));
         		student2 = Integer.parseInt(request.getParameter("dd2"));        		
@@ -59,11 +62,11 @@
     			} else{
     				team.add(stu2);
     			}
-        		List<List<Student>> studentTeams ;    
+        		Vector<List<Student>> studentTeams ;    
         		if (session.getAttribute("teams") != null) {        			
-        			studentTeams = (ArrayList<List<Student>>)session.getAttribute("teams");
+        			studentTeams = (Vector<List<Student>>)session.getAttribute("teams");
         		} else {
-        			studentTeams = new ArrayList<List<Student>>();
+        			studentTeams = new Vector<List<Student>>();
         		}
         		
         		for (List<Student> t :studentTeams) {

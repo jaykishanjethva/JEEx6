@@ -30,9 +30,9 @@
         	if (request.getParameter("btnClear")!= null) {
         		session.removeAttribute("teams");
         	}
-        	List<List<Student>> studentTeams = new ArrayList();      
+        	Vector<List<Student>> studentTeams = new Vector();      
         	if (session.getAttribute("teams") != null) {
-    			studentTeams = (List<List<Student>>)session.getAttribute("teams");
+    			studentTeams = (Vector<List<Student>>)session.getAttribute("teams");
     		}
     		
         	%>
